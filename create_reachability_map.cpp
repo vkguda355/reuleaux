@@ -202,9 +202,8 @@ int main(int argc, char **argv)
             std::vector<bool> configsFound(8, false);
             unsigned int num_free_parameters = GetNumFreeParameters();
             double q6_des = 0;
-            //if (k.isIKSuccess(it->first, joints, solns, configsFound))
-            if (ur_kinematics::inverse_sol(it->first, joints,solns,q6_des))
-            {
+            if (k.isIKSuccess(it->first, joints, solns, configsFound))
+                        {
                 // Changes
                 //          double * Tee = new double[16];
                 //          double q_sols[8*6];
